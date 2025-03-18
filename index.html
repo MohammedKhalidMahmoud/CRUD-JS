@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./utilities/Bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="./utilities/fontawesome/all.min.css">
+    <link rel="stylesheet" href="./styles/bootstrap-overwrite.css">
+    
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <div class="container-sm">
+            <h1></h1>
+            <div class="w-75 mx-auto">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="product_name_input_field" placeholder="Email">
+                    <label for="product_name_input_field">Name</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="product_price_input_field" placeholder="name@example.com">
+                    <label for="product_price_input_field">Price</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="product_category_input_field" placeholder="name@example.com">
+                    <label for="product_category_input_field">Category</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <textarea class="form-control" placeholder="Leave a comment here" id="product_description_input_field"></textarea>
+                    <label for="product_description_input_field">Description</label>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="file" class="form-control" id="floatingInput" placeholder="name@example.com">
+                    <label for="floatingInput">Email address</label>
+                </div>
+                <button class="btn btn-outline-primary" type="button" id="add_product_button" onclick="add_product()">Submit</button>
+                
+            </div>
+            
+        </div>
+    </form>
+    <div class="container mt-5" >
+        <div class="row w-75 mx-auto" id="display_container">
+            
+        </div>
+    </div>
+
+    
+    
+    <script src="./utilities/Bootstrap/bootstrap.bundle.min.js"></script>
+    <script src="./JS/script.js"></script>
+</body>
+</html>
