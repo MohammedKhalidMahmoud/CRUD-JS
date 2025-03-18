@@ -14,10 +14,11 @@ function reset(){
     product_description_input_field.value="";
 }
 
-let products_list=[];
- 
+// let products_list=[];
+let products_list=  JSON.parse(localStorage.getItem("products_list")) || [];
+// console.log(typeof products_list);
+console.log(products_list);
 function add_product(){
-    console.log("Are you trigerred?");
     const product={
         index:products_list.length,
         name:product_name_input_field.value,
@@ -25,7 +26,8 @@ function add_product(){
         category:product_category_input_field.value,
         description:product_description_input_field.value
     };
-    products_list.push(product);
+    
+    localStorage.setItem("products_list",JSON.stringify([...products_list,product]));
     // console.log(products_list);
     display();
     reset(); 
@@ -33,6 +35,7 @@ function add_product(){
 
 function delete_product(index){
     products_list=products_list.filter((product)=>  product.index !== index);
+    localStorage.setItem("products_list",JSON.stringify(products_list));
     console.log(products_list);
     display();
 };
@@ -46,15 +49,15 @@ function update_product(index) {
     product_description_input_field.value = product.description;
 
     add_product_button.innerHTML = "Update";
-    console.log(`one ${products_list.length}`);
+    
     add_product_button.onclick = () => {
-        console.log(products_list.length);
+        
         product.name = product_name_input_field.value;
         product.price = product_price_input_field.value;
         product.category = product_category_input_field.value;
         product.description = product_description_input_field.value;
-        // console.log(products_list.length);
-        add_product_button.innerHTML = "Submit";
+        localStorage.setItem("products_list",JSON.stringify(products_list));
+        add_product_button.innerHTML = "Add";
         add_product_button.onclick = add_product; // Restore original function
         display();
         reset();
@@ -64,12 +67,13 @@ function update_product(index) {
 
 
  
-let cartona="";
+
  function display(){
-    
+    let cartona="";
+    products_list=JSON.parse(localStorage.getItem("products_list"))||[];
     for(let i=0;i<products_list.length;i++){
         cartona +=`
-    <div class="col-4" >
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 " >
         
         <img src="..." class="card-img-top" alt="..."/>
         <div class="card-body">
@@ -87,6 +91,6 @@ let cartona="";
     }
     
     display_container.innerHTML=cartona; 
-    cartona="";
- }
     
+ }
+display();
