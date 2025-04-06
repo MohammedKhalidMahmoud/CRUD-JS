@@ -75,10 +75,10 @@ function update_product(index) {
         cartona+= `
     <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5" >
         
-        <img src="..." class="card-img-top" alt="..."/>
+        
         <div class="card-body">
-            <h3 class="card-title text-center mb-2">Card title</h3>
-            <p class="fs-5">Index: ${products_list[i].index} </p>
+            <h3 class="card-title text-center mb-3">Card title</h3>
+            
             <p class="fs-5">Name: ${products_list[i].name} </p>
             <p class="fs-5">Price: ${products_list[i].price}</p>
             <p class="fs-5">Category: ${products_list[i].category}</p>
