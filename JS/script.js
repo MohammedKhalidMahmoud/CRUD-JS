@@ -17,7 +17,7 @@ function reset(){
 // let products_list=[];
 let products_list=  JSON.parse(localStorage.getItem("products_list")) || [];
 // console.log(typeof products_list);
-console.log(products_list);
+// console.log(products_list);
 function add_product(){
     const product={
         index:products_list.length,
@@ -34,7 +34,7 @@ function add_product(){
  }
 
 function delete_product(index){
-    products_list=products_list.filter((product)=>  product.index !== index);
+    // products_list=products_list.filter((product)=>  product.index !== index);
     localStorage.setItem("products_list",JSON.stringify(products_list));
     console.log(products_list);
     display();
@@ -69,20 +69,20 @@ function update_product(index) {
  
 
  function display(){
-    let cartona="";
-    products_list=JSON.parse(localStorage.getItem("products_list"))||[];
+    let cartona='';
+    let products_list=JSON.parse(localStorage.getItem("products_list"))||[];
     for(let i=0;i<products_list.length;i++){
-        cartona +=`
-    <div class="col-12 col-md-6 col-lg-4 col-xl-3 " >
+        cartona+= `
+    <div class="col-12 col-md-6 col-lg-4 col-xl-3 mb-5" >
         
         <img src="..." class="card-img-top" alt="..."/>
         <div class="card-body">
-            <h5 class="card-title">Card title"></h5>
-            <p>Index: ${products_list[i].index} </p>
-            <p>Name: ${products_list[i].name} </p>
-            <p>Price: ${products_list[i].price}</p>
-            <p>Category: ${products_list[i].category}</p>
-            <p>Description: ${products_list[i].description}</p>  
+            <h3 class="card-title text-center mb-2">Card title</h3>
+            <p class="fs-5">Index: ${products_list[i].index} </p>
+            <p class="fs-5">Name: ${products_list[i].name} </p>
+            <p class="fs-5">Price: ${products_list[i].price}</p>
+            <p class="fs-5">Category: ${products_list[i].category}</p>
+            <p class="fs-5">Description: ${products_list[i].description}</p>  
         </div>
         <button class="btn btn-primary block w-100 mb-1" onclick="update_product(${products_list[i].index})">Update</button>
         <button class="btn btn-danger block w-100" onclick="delete_product(${products_list[i].index})">Delete</button>        
@@ -90,7 +90,14 @@ function update_product(index) {
     `;
     }
     
-    display_container.innerHTML=cartona; 
+    display_container.innerHTML=cartona;
+    
     
  }
 display();
+
+function search(pname, cname){
+
+
+
+}
