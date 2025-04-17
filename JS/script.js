@@ -69,7 +69,7 @@ function display(){
     let cartona = '';
     products_list.forEach((product, i) => {
         cartona += `
-            <div class="card my-3 p-3 shadow-sm">
+            <div class="card my-3 p-3 shadow-sm col-12 md-col-6 lg-col-4">
                 <h5 class="card-title text-center mb-2">Product</h5>
                 <p><strong>Name:</strong> ${product.name}</p>
                 <p><strong>Price:</strong> ${product.price}</p>
