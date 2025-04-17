@@ -30,7 +30,4 @@ A lightweight, browser-based Product Management system built with HTML, CSS, and
 - **Vanilla JavaScript** – App logic and DOM manipulation
 - **Local Storage API** – For persisting data between sessions
 
----
-
-## 📁 Project Structure
 
